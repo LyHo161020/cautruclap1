@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number=Number(prompt("nhập sô số nguyên tố đầu tiên cần in ra màn hình:"));
+        let count=0;
+        let obj="";
+        let count1=0;
+        for(var i=2;i<=100;i++) {
+            for(var j=2;j<=i;j++) {
+                    if(i%j==0) 
+                        count+=1;    
+                        console.log('j='+j);     
+            }
+            if(count==1) {
+                    obj=obj+" "+i;
+                    count1+=1;
+                    console.log("i="+i);
+                    console.log(count1);
+                    console.log(obj)
+                 }
+            count=0;
+            
+            if (count1==number) {
+                break;
+            }
+        }
+        document.write(obj); 
+    </script>
+</body>
+</html>
