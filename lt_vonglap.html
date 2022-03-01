@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="bai1" onclick="bai1()">
+    <input type="submit" value="bai2" onclick="bai2()">
+    <input type="submit" value="bai3" onclick="bai3()">
+    <input type="submit" value="bai4" onclick="bai4()">
+    <input type="submit" value="bai5" onclick="bai5()">
+    <input type="submit" value="bai6" onclick="bai6()">
+    <input type="submit" value="bai7" onclick="bai7()">
+    <input type="submit" value="bai8" onclick="bai8()">
+
+    <script>
+        const bai1 = () => {
+            for (var i = 1; i <= 100; i++) {
+                alert(i);
+                if (i == 99) {
+                    alert("Đã hoành thành");
+                    break;
+                }
+            }
+        };
+
+        const bai2 = () => {
+            let nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+            while (nhietdo < 20 || nhietdo > 100) {
+                if (nhietdo < 20) {
+                    alert("Nhiệt độ quá lạnh, hãy tăng nhiệt độ")
+                    nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+                } else if (nhietdo > 100) {
+                    alert("Nhiệt độ quá nóng, hãy giảm nhiệt độ")
+                    nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+                }
+            }
+            alert("END");
+        };
+
+        const bai3 = () => {
+            let temp = 1, a = 0, b = 1;
+            let fibonacci = "";
+            for (var i = 1; i <= 20; i++) {
+                temp = a + b;
+                fibonacci += temp + "  ";
+                a = b;
+                b = temp;
+            }
+            document.write(fibonacci);
+        };
+
+        const bai4 = () => {
+            let temp = 1, a = 0, b = 1;
+            let fibonacci = "";
+            for (var i = 1; i <= 20; i++) {
+                temp = a + b;
+                fibonacci += temp + "  ";
+                a = b;
+                b = temp;
+                if (temp % 5 == 0) {
+                    obj = temp;
+                    break;
+                }
+            }
+            document.write(obj);
+        };
+
+        const bai5 = () => {
+            let temp = 1, a = 0, b = 1;
+            let sum = 0;
+            for (var i = 1; i <= 6; i++) {
+                temp = a + b;
+                sum += temp;
+                a = b;
+                b = temp;
+            }
+            document.write(sum + 1);
+        };
+
+        const bai6 = () => {
+            let sum = 0;
+            for (let i = 7; i <= 210; i += 7) {
+                sum += i;
+            }
+            document.write(sum);
+        };
+
+        const bai7 = () => {
+            obj = '';
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 == 0 && i % 5 == 0)
+                    obj += ` FizzBuzz`;
+                else if (i % 5 == 0)
+                    obj += ` Buzz`;
+                else if (i % 3 == 0)
+                    obj += ` Fizz`;
+                else obj += " " + i;
+            }
+            document.write(obj);
+        };
+
+        const bai8 = () => {
+            let count = 0;
+            let valueRange = Number(prompt("nhập vào khoảng giá trị bạn muôn:0-"));
+            let randomNumber = Math.round(Math.random() * valueRange);
+            console.log(randomNumber);
+            let number = Number(prompt("Nhập số bạn đoán vào đây:"));
+            if (number == randomNumber) {
+                alert("Chúc mừng bạn đã đoán đúng!")
+            } else {
+                while (number != randomNumber) {
+                    count++;
+                    alert("Rât tiếc bán đã đoán sai bạn có thể thử lại");
+                    let number = Number(prompt("Nhập số bạn đoán vào đây:"));
+                    console.log(count);
+                    if (count == 2 && number != randomNumber) {
+                        alert("Bạn đã hết lượt chơi");
+                        return;
+                    }
+                    if (number == randomNumber) { alert("Bạn đoạn đúng"); return }
+                }
+            }
+        };
+    </script>
+
+</body>
+
+</html>
