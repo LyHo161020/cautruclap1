@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="submit" value="bai1" onclick="bai1()">
+    <input type="submit" value="bai2" onclick="bai2()">
+    <p id="res"></p>
+    <script>
+        
+        function bai1() {
+            let text="";
+            for(var i=0;i<=5;i++) {
+              text += `The number is ${i}`+ '<br>';
+            }
+            document.getElementById("res").innerHTML=text;
+        }
+
+        function bai2() {
+            let number = Number(prompt('Nhap so bat ky:'));
+            let sum=0;
+            for(var i=1;i<=number;i++) {
+              sum+=i;
+            }
+            alert(`Tong la ${sum}`);
+        }
+    </script>
+</body>
+</html>
