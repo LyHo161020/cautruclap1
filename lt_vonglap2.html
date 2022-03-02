@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="bai1" onclick="bai1()" />
+    <input type="submit" value="bai2" onclick="bai2()" />
+    <input type="submit" value="bai3" onclick="bai3()" />
+    <input type="submit" value="bai4" onclick="bai4()" />
+    <input type="submit" value="bai5" onclick="bai5()" />
+    <input type="submit" value="bai6" onclick="bai6()" />
+
+    <script>
+        const bai1 = () => {
+            let temp = 1, a = 0, b = 1;
+            let fibonacci = "";
+            for (var i = 1; i <= 30; i++) {
+                temp = a + b;
+                fibonacci += temp + "  ";
+                a = b;
+                b = temp;
+            }
+            document.write(fibonacci);
+        };
+        const recurse = () => {
+
+        };
+        const bai2 = () => {
+            let number = Number(prompt("nhập số cần tính gia thừa"));
+            let factorial = 1;
+            if (number <= 0) {
+                alert("Không tồn tại giai thừa của  số trên");
+            } else {
+                for (var i = 1; i <= number; i++) {
+                    factorial *= i;
+                }
+                alert(`giai thừa của ${number} là: ${factorial}`);
+            }
+        };
+
+        const bai3 = () => {
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            };
+            document.write("<br>");
+
+            for (let i = 5; i >= 1; i--) {
+                for (let j = 1; j <= i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            };
+            document.write("<br>");
+
+            for (let i = 5; i >= 1; i--) {
+                for (let j = 1; j <= 5; j++) {
+                    if (j >= i) {
+                        document.write('*');
+                    } else {
+                        document.write('&nbsp', '&nbsp');
+                    }
+                }
+                document.write('<br>');
+            };
+            document.write('<br>');
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (j >= i) {
+                        document.write('*');
+                    } else {
+                        document.write('&nbsp', '&nbsp');
+                    }
+                }
+                document.write('<br>');
+            }
+        };
+
+        const bai4 = () => {
+            for (let i = 1; i <= 20; i++) {
+                document.write('*');
+            }
+            document.write('<br>');
+
+            for (let i = 1; i <= 5; i++) {
+                document.write('*');
+                for (let j = 1; j <= 18; j++) {
+                    document.write("&nbsp&nbsp");
+                }
+                document.write(" *<br>");
+            }
+            for (let i = 1; i <= 20; i++) {
+                document.write('*');
+            }
+        };
+
+        const bai5 = () => {
+            let loan = Number(prompt("Nhập số vay:"));
+            let month = Number(prompt("Nhập số tháng vay:"));
+            let interest = Number(prompt("Nhập lãi hàng tháng:"));
+            let i = 1;
+            while (i <= month) {
+                loan *= (1 + interest / 100);
+                i++;
+            }
+            document.write(loan);
+        };
+    </script>
+</body>
+
+</html>
