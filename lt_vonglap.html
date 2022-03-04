@@ -44,43 +44,46 @@
         };
 
         const bai3 = () => {
-            let temp = 1, a = 0, b = 1;
+            let temp = 0, a = 0, b = 1,count=1;
             let fibonacci = "";
-            for (var i = 1; i <= 20; i++) {
-                temp = a + b;
+            while(count<=20) {
                 fibonacci += temp + "  ";
+                temp = a + b;   
                 a = b;
                 b = temp;
+                count++;
             }
             document.write(fibonacci);
         };
 
         const bai4 = () => {
-            let temp = 1, a = 0, b = 1;
-            let fibonacci = "";
-            for (var i = 1; i <= 20; i++) {
-                temp = a + b;
-                fibonacci += temp + "  ";
+            let temp = 0, a = 0, b = 1,count=1;
+            // let fibonacci = "";
+            while(count<=20) {
+                // fibonacci += temp + "  ";
+                temp = a + b; 
                 a = b;
                 b = temp;
                 if (temp % 5 == 0) {
                     obj = temp;
                     break;
                 }
+                count++;
             }
             document.write(obj);
         };
 
         const bai5 = () => {
-            let temp = 1, a = 0, b = 1;
+            let temp = 0, a = 0, b = 1,count=1;
             let sum = 0;
-            for (var i = 1; i <= 6; i++) {
-                temp = a + b;
+            while(count<=20) {
                 sum += temp;
+                temp = a + b;   
                 a = b;
                 b = temp;
+                count++;
             }
-            document.write(sum + 1);
+            document.write(sum);
         };
 
         const bai6 = () => {
@@ -94,7 +97,7 @@
         const bai7 = () => {
             obj = '';
             for (let i = 1; i <= 100; i++) {
-                if (i % 3 == 0 && i % 5 == 0)
+                if (i % 15 == 0 )
                     obj += ` FizzBuzz`;
                 else if (i % 5 == 0)
                     obj += ` Buzz`;
